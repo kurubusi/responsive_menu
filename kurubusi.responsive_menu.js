@@ -165,7 +165,7 @@ KURUBUSI.modules.func = function(K){
 
 
 //*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
-//  kurubusi.responsive_menu Ver.1.0.02 beta
+//  kurubusi.responsive_menu Ver.1.0.03  publicbeta
 //  2014-11-1
 //  KURUBUSI.net === Masahiro Ohkubo
 //  http://kurubusi.net/
@@ -173,7 +173,6 @@ KURUBUSI.modules.func = function(K){
 //*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
 /**
  *
- *レスポンシブ対応メニュー生成 kurubusi.responsive_menu
  *@module responsiveMenu
  *@namespace app
  *
@@ -211,8 +210,8 @@ KURUBUSI.modules.app = function(K){
 			this.overdiv.style.width = '100%';//(parseFloat(document.defaultView.getComputedStyle(this.c, '')['width'])) + 'px';
 			this.overdiv.style.height = (parseFloat(document.defaultView.getComputedStyle(this.c, '')['height'])) + 'px';
 			this.overdiv.style.position = 'absolute';
-			this.overdiv.style.opacity = '0.5';
-			this.overdiv.style.backgroundColor = 'red';
+			//this.overdiv.style.opacity = '0.5';
+			//this.overdiv.style.backgroundColor = 'red';
 			this.overdiv.style.top = '0';
 			this.overdiv.style.display = 'block';
 			//this.overdiv.style.pointerEvents = 'auto';
@@ -245,7 +244,6 @@ KURUBUSI.modules.app = function(K){
 			});
 			K.addEventSet(this.overdiv, "mousemove", function(event) {
 				if (!flag) return;
-				//リンクの場合マウスカーソルを変更する処理が合ったほうがいいが保留
 			});
 			
 			
@@ -259,8 +257,6 @@ KURUBUSI.modules.app = function(K){
 						
 						
 						
-						//iframeの動画クリック出来ない
-						//formの時
 						if(pointobj.tagName === 'INPUT' || pointobj.tagName === 'SELECT'){ 
 							console.dir(pointobj);
 							
@@ -269,7 +265,6 @@ KURUBUSI.modules.app = function(K){
 								evt.initEvent( "click", false, true );
 								pointobj.dispatchEvent( evt );
 							}else{
-								//一時的にoverdiv解除　
 								this_.overdiv.style.display = 'none';
 								
 								var evt = document.createEvent( "MouseEvents" );
@@ -284,7 +279,7 @@ KURUBUSI.modules.app = function(K){
 								
 							}
 						}else{
-							(function(obj){  //imageの時等
+							(function(obj){  //
 								if(obj.parentElement.tagName === 'BODY'){
 									return;
 								}else if(obj.parentElement.tagName !== 'A'){
@@ -672,26 +667,26 @@ KURUBUSI.modules.app = function(K){
 					recently = [];
 			
 			
-			for(var i = 1; i <= 10; i++){ //マウスを離す直前の10のイベントで判断
+			for(var i = 1; i <= 10; i++){ //
 				if(moveobj[moveobjlength - i]){
 					recently.unshift(moveobj[moveobjlength - i]);
 				}
 			}
 			
-			dr = Math.sqrt(Math.pow((recently[recently.length-1].touchMoveX - recently[0].touchMoveX),2) + Math.pow((recently[recently.length-1].touchMoveY - recently[0].touchMoveY),2));  //移動距離
+			dr = Math.sqrt(Math.pow((recently[recently.length-1].touchMoveX - recently[0].touchMoveX),2) + Math.pow((recently[recently.length-1].touchMoveY - recently[0].touchMoveY),2));  //
 			
 			speed = dr / (recently[recently.length-1].d_time - recently[0].d_time);
-			duration = speed * this.speedrate;  //////////////////移動にかかる時間
+			duration = speed * this.speedrate;  //////////////////
 			
-			moveX = (recently[recently.length-1].touchMoveX - recently[0].touchMoveX) * this.durationrateX;//移動する距離
-			moveY = (recently[recently.length-1].touchMoveY - recently[0].touchMoveY) * this.durationrateY;//移動する距離
+			moveX = (recently[recently.length-1].touchMoveX - recently[0].touchMoveX) * this.durationrateX;//
+			moveY = (recently[recently.length-1].touchMoveY - recently[0].touchMoveY) * this.durationrateY;//
 			
 			
-			toX = objstyleleft + moveX; //目的地
+			toX = objstyleleft + moveX; //
 			toY = objstyletop + moveY;
 			
 			
-			if(duration && duration > 100){  //イージング処理
+			if(duration && duration > 100){  //
 				var timer = setInterval(function(){
 					var time = new Date() - begin,
 							cuY = K.easeOutQuad(time, objstyletop, moveY, duration),
@@ -740,7 +735,7 @@ KURUBUSI.modules.app = function(K){
 			event.returnValue = false;
 		};
 		
-		//インラインで指定していないCSSプロパティ取得
+		//
 		Slider.prototype.objtComputedStyle = function(obj, properties){
 			return parseFloat((obj.currentStyle || document.defaultView.getComputedStyle(obj, ''))[properties]);
 		};
@@ -1074,7 +1069,7 @@ KURUBUSI.modules.app = function(K){
 			navarr[i].change();
 		}
 		
-		K.addEventSet(window, 'resize', function(e){  //リサイズイベント
+		K.addEventSet(window, 'resize', function(e){  //
 			if(K.inferenceUa() === 'PC'){
 				for( i = 0; i < navarr.length; i++ ){
 					navarr[i].change(e);
@@ -1082,7 +1077,7 @@ KURUBUSI.modules.app = function(K){
 			}
 		});
 		
-		K.addEventSet(window, 'orientationchange', function(e){  //回転イベント
+		K.addEventSet(window, 'orientationchange', function(e){  //
 			for( i = 0; i < navarr.length; i++ ){
 				navarr[i].change(e);
 			}

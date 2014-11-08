@@ -11,7 +11,6 @@
 //*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
 /**
  *
- *レスポンシブ対応メニュー生成 KurubusiResponsiveMenu
  *@module KurubusiResponsiveMenu
  *
  */
@@ -218,7 +217,6 @@ KurubusiResponsiveMenu = function(){
 			});
 			addEventSet(this.overdiv, "mousemove", function(event) {
 				if (!flag) return;
-				//リンクの場合マウスカーソルを変更する処理が合ったほうがいいが保留
 			});
 			
 			
@@ -231,9 +229,6 @@ KurubusiResponsiveMenu = function(){
 					}else{
 						
 						
-						
-						//iframeの動画クリック出来ない
-						//formの時
 						if(pointobj.tagName === 'INPUT' || pointobj.tagName === 'SELECT'){ 
 							console.dir(pointobj);
 							
@@ -242,7 +237,6 @@ KurubusiResponsiveMenu = function(){
 								evt.initEvent( "click", false, true );
 								pointobj.dispatchEvent( evt );
 							}else{
-								//一時的にoverdiv解除　
 								this_.overdiv.style.display = 'none';
 								
 								var evt = document.createEvent( "MouseEvents" );
@@ -257,7 +251,7 @@ KurubusiResponsiveMenu = function(){
 								
 							}
 						}else{
-							(function(obj){  //imageの時等
+							(function(obj){  
 								if(obj.parentElement.tagName === 'BODY'){
 									return;
 								}else if(obj.parentElement.tagName !== 'A'){
@@ -299,15 +293,6 @@ KurubusiResponsiveMenu = function(){
 					objstylewidth = this.objtComputedStyle(this.c, 'width'),
 					wheight = this.objtComputedStyle(this.w, 'height'),
 					wwidth = this.objtComputedStyle(this.w, 'width');
-			
-			/*
-			alert(objstyleheight);
-			alert(window.outerHeight);  //iosと全然違う
-			alert(window.innerHeight);  //近い
-			alert(document.documentElement.clientHeight);
-			alert(screen.availHeight);
-			alert(screen.height);
-			*/
 			
 			if(this.direction === 'y' && objstyleheight < window.document.documentElement.clientHeight){  
 				this.c.style.height = document.documentElement.clientHeight + 'px';
@@ -662,26 +647,26 @@ KurubusiResponsiveMenu = function(){
 					recently = [];
 			
 			
-			for(var i = 1; i <= 10; i++){ //マウスを離す直前の10のイベントで判断
+			for(var i = 1; i <= 10; i++){ //
 				if(moveobj[moveobjlength - i]){
 					recently.unshift(moveobj[moveobjlength - i]);
 				}
 			}
 			
-			dr = Math.sqrt(Math.pow((recently[recently.length-1].touchMoveX - recently[0].touchMoveX),2) + Math.pow((recently[recently.length-1].touchMoveY - recently[0].touchMoveY),2));  //移動距離
+			dr = Math.sqrt(Math.pow((recently[recently.length-1].touchMoveX - recently[0].touchMoveX),2) + Math.pow((recently[recently.length-1].touchMoveY - recently[0].touchMoveY),2));  //
 			
 			speed = dr / (recently[recently.length-1].d_time - recently[0].d_time);
-			duration = speed * this.speedrate;  //////////////////移動にかかる時間
+			duration = speed * this.speedrate;  /////////////////
 			
-			moveX = (recently[recently.length-1].touchMoveX - recently[0].touchMoveX) * this.durationrateX;//移動する距離
-			moveY = (recently[recently.length-1].touchMoveY - recently[0].touchMoveY) * this.durationrateY;//移動する距離
+			moveX = (recently[recently.length-1].touchMoveX - recently[0].touchMoveX) * this.durationrateX;//
+			moveY = (recently[recently.length-1].touchMoveY - recently[0].touchMoveY) * this.durationrateY;//
 			
 			
-			toX = objstyleleft + moveX; //目的地
+			toX = objstyleleft + moveX; //
 			toY = objstyletop + moveY;
 			
 			
-			if(duration && duration > 100){  //イージング処理
+			if(duration && duration > 100){  //
 				var timer = setInterval(function(){
 					var time = new Date() - begin,
 							cuY = easeOutQuad(time, objstyletop, moveY, duration),
@@ -730,7 +715,7 @@ KurubusiResponsiveMenu = function(){
 			event.returnValue = false;
 		};
 		
-		//インラインで指定していないCSSプロパティ取得
+		//
 		Slider.prototype.objtComputedStyle = function(obj, properties){
 			return parseFloat((obj.currentStyle || document.defaultView.getComputedStyle(obj, ''))[properties]);
 		};
@@ -1094,7 +1079,7 @@ KurubusiResponsiveMenu = function(){
 			navarr[i].change();
 		}
 		
-		addEventSet(window, 'resize', function(e){  //リサイズイベント
+		addEventSet(window, 'resize', function(e){  //
 			if(inferenceUa() === 'PC'){
 				for( i = 0; i < navarr.length; i++ ){
 					navarr[i].change(e);
@@ -1102,7 +1087,7 @@ KurubusiResponsiveMenu = function(){
 			}
 		});
 		
-		addEventSet(window, 'orientationchange', function(e){  //回転イベント
+		addEventSet(window, 'orientationchange', function(e){  //
 			for( i = 0; i < navarr.length; i++ ){
 				navarr[i].change(e);
 			}
