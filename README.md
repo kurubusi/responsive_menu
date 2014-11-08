@@ -35,10 +35,10 @@ Drawer Menu responsive
    </div>
 ```
 * `class="k_target_obj""`        **indispensable**
-* `data-krm-group="group_a"`        **option**
-
-
-
-
+* `data-krm-group="group_a"`        **option**  
+  
+  
+  
+  
 ![](http://kurubusi.net/wp-content/uploads/2014/10/kurubusi.responsive_menu_eye-catch2.jpg)  
 [Produced by KURUBUSI](http://kurubusi.net/)
