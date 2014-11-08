@@ -23,10 +23,10 @@ Class is attached to the object used as a switch.
 ```html
    <button type="button" class="k_nav_b" data-krm-group="group_a" data-krm-breakpoint="760" data-krm-fadeto="right">MENU</button>
 ```
-* class="k_nav_b" **indispensable**
-* data-krm-group="group_a" **option**
-* data-krm-breakpoint="760" **option**
-* data-krm-fadeto="right" **option**
+* `class="k_nav_b"`    **indispensable**
+* `data-krm-group="group_a"`    **option**
+* `data-krm-breakpoint="760"`    **option**
+* `data-krm-fadeto="right"`    **option**
 
 Class is attached to the menu of a target. 
 
@@ -35,7 +35,8 @@ Class is attached to the menu of a target.
       …
    </div>
 ```
-
+* `class="k_target_obj""`    **indispensable**
+* `data-krm-group="group_a"`    **option**
 
 
 
