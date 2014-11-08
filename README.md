@@ -7,7 +7,7 @@ Drawer Menu responsive
 
 ## Installation
 
-Reading file
+1. Reading file
 ```html
    <head>
       …
@@ -18,7 +18,7 @@ Reading file
 ```
 
 
-Class is attached to the object used as a switch. 
+2. Class is attached to the object used as a switch. 
 ```html
    <button type="button" class="k_nav_b" data-krm-group="group_a" data-krm-breakpoint="760" data-krm-fadeto="right">MENU</button>
 ```
@@ -28,7 +28,7 @@ Class is attached to the object used as a switch.
 * `data-krm-fadeto="right"`        **option**
 
 
-Class is attached to the menu of a target. 
+3. Class is attached to the menu of a target. 
 ```html
    <div class="k_target_obj" data-krm-group="group_a">
       …
