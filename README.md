@@ -9,20 +9,20 @@
 
 Reading file
 
-<head>
-    …
-    <script type="text/javascript" src="kurubusi.responsive_menu.js"></script>
-    <link href="kurubusi.responsive_menu.css" rel="stylesheet" type="text/css">
-    …
-</head>
+   <head>
+      …
+      <script type="text/javascript" src="kurubusi.responsive_menu.js"></script>
+      <link href="kurubusi.responsive_menu.css" rel="stylesheet" type="text/css">
+      …
+   </head>
 
 Class is attached to the object used as a switch. 
 
-<button type="button" class="k_nav_b" data-krm-group="group_a" data-krm-breakpoint="760" data-krm-fadeto="right">MENU</button>
+   <button type="button" class="k_nav_b" data-krm-group="group_a" data-krm-breakpoint="760" data-krm-fadeto="right">MENU</button>
 
 Class is attached to the menu of a target. 
 
-<div class="k_target_obj" data-krm-group="group_a">
-    …
-</div>
+   <div class="k_target_obj" data-krm-group="group_a">
+      …
+   </div>
 
