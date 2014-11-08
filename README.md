@@ -34,7 +34,7 @@ Drawer Menu responsive
       …
    </div>
 ```
-* `class="k_target_obj""`        **indispensable**
+* `class="k_target_obj"`        **indispensable**
 * `data-krm-group="group_a"`        **option**  
 
 
