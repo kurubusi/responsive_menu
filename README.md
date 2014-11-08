@@ -9,12 +9,14 @@
 
 Reading file
 
+```html
    <head>
       …
       <script type="text/javascript" src="kurubusi.responsive_menu.js"></script>
       <link href="kurubusi.responsive_menu.css" rel="stylesheet" type="text/css">
       …
    </head>
+```
 
 Class is attached to the object used as a switch. 
 
