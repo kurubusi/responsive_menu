@@ -40,4 +40,4 @@ Drawer Menu responsive
 
 ## Sample
 
-[KURUBUSI](http://kurubusi.net/)
+[KURUBUSI.net](http://kurubusi.net/products/free/javascript-free/kurubusi-responsive_menu/)
